@@ -1,0 +1,127 @@
+@import '@fontsource-variable/figtree';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-background: oklch(0.978 0.006 145);
+  --color-foreground: oklch(0.22 0.02 155);
+
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.22 0.02 155);
+
+  --color-muted: oklch(0.955 0.008 145);
+  --color-muted-foreground: oklch(0.5 0.02 155);
+
+  --color-border: oklch(0.91 0.01 145);
+  --color-border-strong: oklch(0.82 0.015 145);
+  --color-input: oklch(0.88 0.012 145);
+  --color-ring: oklch(0.55 0.14 150);
+
+  --color-primary: oklch(0.52 0.14 150);
+  --color-primary-foreground: oklch(0.99 0.01 150);
+  --color-accent: oklch(0.94 0.03 150);
+  --color-accent-foreground: oklch(0.32 0.08 150);
+
+  --color-destructive: oklch(0.52 0.17 25);
+  --color-destructive-foreground: oklch(0.99 0 0);
+
+  --color-status-neutral: oklch(0.94 0.008 145);
+  --color-status-neutral-foreground: oklch(0.44 0.02 155);
+  --color-status-progress: oklch(0.93 0.07 95);
+  --color-status-progress-foreground: oklch(0.45 0.1 80);
+  --color-status-done: oklch(0.92 0.07 150);
+  --color-status-done-foreground: oklch(0.42 0.09 150);
+
+
+  --color-scrollbar-thumb: oklch(0.85 0.012 145);
+  --color-scrollbar-thumb-hover: oklch(0.73 0.015 145);
+
+  --avatar-lightness: 0.9;
+  --avatar-chroma: 0.05;
+  --avatar-text-lightness: 0.38;
+
+
+  --calendar-indicator-invert: 0;
+
+  --checkbox-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fcfcfc' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 8.5 3.5 3.5L13 5'/%3E%3C/svg%3E");
+  --checkbox-dash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fcfcfc' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M4 8h8'/%3E%3C/svg%3E");
+  --radio-dot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='3.5' fill='%23fcfcfc'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  ::-webkit-search-cancel-button,
+  ::-webkit-search-decoration {
+    appearance: none;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar-thumb) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background-color: var(--color-scrollbar-thumb);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-thumb-hover);
+  }
+}
+
+@utility avatar-tint {
+  background-color: oklch(
+    var(--avatar-lightness) var(--avatar-chroma) var(--avatar-hue)
+  );
+  color: oklch(
+    var(--avatar-text-lightness) var(--avatar-chroma) var(--avatar-hue)
+  );
+}

@@ -1,0 +1,14 @@
+{
+  "name": "prueba-wsp-bot",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "check": "biome check .",
+    "format": "biome check --write .",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.2",
+    "typescript": "^7.0.2"
+  }
+}

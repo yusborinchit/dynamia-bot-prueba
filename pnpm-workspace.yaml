@@ -1,0 +1,11 @@
+packages:
+  - api
+  - web
+  - packages/*
+
+onlyBuiltDependencies:
+  - esbuild
+
+ignoredBuiltDependencies:
+  - baileys
+  - protobufjs
