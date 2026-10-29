@@ -72,10 +72,10 @@ Desde la raíz: `pnpm check` / `pnpm format` (Biome) y `pnpm typecheck` (todo el
 - Primer arranque: con `WHATSAPP_ENABLED=true` el QR sale en la consola (o en `docker compose logs api`).
   Se escanea desde el teléfono del número dedicado. Después, `GET /api/v1/whatsapp/groups` lista
   los grupos para copiar el `jid` a `WHATSAPP_GROUP_JID` y reiniciar.
-- Producción: `docker compose -f docker-compose.prod.yml up -d --build` desde la raíz, con
-  `api/.env.production` y `POSTGRES_PASSWORD` definidos. Las migraciones corren al arrancar el
-  contenedor. Usuarios: `docker compose -f docker-compose.prod.yml exec api node dist/create-user.js
-  --email x --password y`.
+- Producción: Coolify con build pack Docker Compose sobre `docker-compose.prod.yml`; las
+  variables se cargan en Coolify. Las migraciones corren al arrancar el contenedor. Desde la
+  terminal del contenedor de la api: `node dist/seed.js` para el catálogo y
+  `node dist/create-user.js --email x --password y` para usuarios.
 - Errores de la API: `{ message, errors? }`, con `errors` por campo en los 422 de validación.
 
 ## Verificación
